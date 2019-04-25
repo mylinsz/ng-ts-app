@@ -6,8 +6,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
+// 资讯管理
+import { PopularScienceComponent }  from './popular-science/popular-science.component';
+
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/popularscience', pathMatch: 'full' },
+  { path: 'popularscience', component: PopularScienceComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent }, // path 中的冒号（:）表示 :id 是一个占位符，它表示某个特定英雄的 id。
   { path: 'heroes', component: HeroesComponent }

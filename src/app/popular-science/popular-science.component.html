@@ -1,0 +1,89 @@
+
+<el-button type="primary">Hello World</el-button>
+
+<el-button>默认按钮</el-button>
+<el-button type="primary">主要按钮</el-button>
+<el-button type="text">文字按钮</el-button>
+<el-button>文字按钮</el-button>
+<el-button [round]="true">文字按钮</el-button>
+
+
+<el-table [model]="tableData" [border]="true" center="all" [stripe]="true">
+  <el-table-column model-key="coverImg" label="主图" width="140">
+    <ng-template #slot let-scope="scope">
+      <img [src]="scope.rowData.coverImg" alt="" width="80px" height="80px">
+    </ng-template>
+  </el-table-column>
+  <el-table-column model-key="id" label="ID" width="140">
+  </el-table-column>
+  <el-table-column model-key="title" label="标题" width="140">
+  </el-table-column>
+<!--
+  <el-table-column model-key="labelIds" label="标签" width="140">
+    <ng-template #slot let-scope="scope">
+    </ng-template>
+  </el-table-column>
+
+  <el-table-column model-key="" label="分类" width="140">
+  </el-table-column>
+  -->
+  <el-table-column model-key="status" label="状态" width="140">
+  </el-table-column>
+  <el-table-column model-key="readCount" label="阅读数" width="140">
+    <ng-template #slot let-scope="scope">
+    {{ (scope.rowData.readCount).toLocaleString() }}
+    </ng-template>
+  </el-table-column>
+  <el-table-column model-key="organizationName" label="所属机构" width="140">
+  </el-table-column>
+  <el-table-column model-key="firstTime" label="首发时间" width="140">
+    <ng-template #slot let-scope="scope">
+      {{ scope.rowData.firstTime | date:'yyyy-MM-dd HH:mm:ss' }}
+    </ng-template>
+  </el-table-column>
+  <el-table-column model-key="createAt" label="创建时间" width="140">
+    <ng-template #slot let-scope="scope">
+      {{ scope.rowData.createAt | date:'yyyy-MM-dd HH:mm:ss' }}
+    </ng-template>
+  </el-table-column>
+  <el-table-column label="操作" width="140">
+    <ng-template #slot let-scope="scope">
+      <!--<a routerLink="/detail/{{scope.rowData.id}}"> 这两种写法都能实现路由-->
+      <a [routerLink]="['/detail', scope.rowData.id]">
+        <el-button size="small" (click)="handle(scope)">编辑</el-button>
+      </a>
+    </ng-template>
+  </el-table-column>
+</el-table>
+
+<el-pagination
+  (modelChange) = "handleCurrentChange($event)"
+  [model] = "pageNumber"
+  [page-size] = "pageSize"
+  [total] = "recordCount"
+  [layout] = "['prev', 'pager', 'next', 'jumper', 'size', 'total']">
+</el-pagination>
+
+
+
+<!--
+
+<el-pagination
+@current-change="handleCurrentChange"
+@size-change="handleSizeChange"
+layout="total, sizes, prev, pager, next, jumper"
+:page-sizes="[5, 10, 20, 50]"
+:page-size="pageSize"
+:current-page.sync="pageNumber"
+:total="recordCount"
+>
+</el-pagination>
+
+<el-table-column label="操作" width="200">
+    <template slot-scope="scope">
+      <router-link :to="{ name: 'editScien', params: { id:scope.row.id }}">
+        <el-button >{{$t('common.edit')}}</el-button>
+      </router-link>
+    </template>
+</el-table-column>
+-->

@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+  in /src/styles.css
+  add code:
+*/
+@import "~element-angular/theme/index.css";
+
 /* Application-wide Styles */
 h1 {
   color: #369;
