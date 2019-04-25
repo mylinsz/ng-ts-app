@@ -28,6 +28,11 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PopularScienceComponent } from './popular-science/popular-science.component';
+import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+
+registerLocaleData(zh);
 
 /*
   @NgModule 装饰器，@NgModule 接受一个元数据对象，告诉 Angular 如何编译和启动应用
@@ -42,9 +47,10 @@ import { PopularScienceComponent } from './popular-science/popular-science.compo
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    ElModule.forRoot()
+    ElModule.forRoot(),
+    NgZorroAntdModule
   ],
-  providers: [], // 配置项目所需要的服务
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }], // 配置项目所需要的服务
   bootstrap: [AppComponent] // 指定应用的主视图（称为根组件） 通过引导根 AppModule 来启动应用，这里一般写的是根组件
 })
 
