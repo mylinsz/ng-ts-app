@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8', 'x-auth-token': 'e1777215-7633-4be9-bf82-3d2a7aa60f82' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8', 'x-auth-token': 'c8528d8c-6d64-4223-853b-45d0257b0f83' })
 }
 
 @Injectable({

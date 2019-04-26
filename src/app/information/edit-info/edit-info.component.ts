@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-edit-info',
+  templateUrl: './edit-info.component.html',
+  styleUrls: ['./edit-info.component.css']
+})
+
+export class EditInfoComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

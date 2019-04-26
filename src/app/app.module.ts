@@ -28,18 +28,23 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PopularScienceComponent } from './popular-science/popular-science.component';
+
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+
+/* 配置 angular i18n */
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-
 registerLocaleData(zh);
+
+import { InformationComponent } from './information/information.component';
+import { EditInfoComponent } from './information/edit-info/edit-info.component';
 
 /*
   @NgModule 装饰器，@NgModule 接受一个元数据对象，告诉 Angular 如何编译和启动应用
 */
 @NgModule({
   declarations: [ // 配置当前项目运行的组件
-    AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, PopularScienceComponent
+    AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, PopularScienceComponent, InformationComponent, EditInfoComponent
   ],
   imports: [ // 配置当前模块运行依赖的其他模块
     BrowserModule,
